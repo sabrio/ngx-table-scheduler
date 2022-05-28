@@ -101,6 +101,37 @@
           }
         }
       }
+    },
+    "NgxTableScheduler": {
+      "projectType": "library",
+      "root": "projects/ngx-table-scheduler",
+      "sourceRoot": "projects/ngx-table-scheduler/src",
+      "prefix": "Ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-table-scheduler/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-table-scheduler/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-table-scheduler/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-table-scheduler/src/test.ts",
+            "tsConfig": "projects/ngx-table-scheduler/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-table-scheduler/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "car-calendar-scheduler"

@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "NgxTableScheduler": [
+        "dist/ngx-table-scheduler/ngx-table-scheduler",
+        "dist/ngx-table-scheduler"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
