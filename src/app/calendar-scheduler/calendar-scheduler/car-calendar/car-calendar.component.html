@@ -1,0 +1,234 @@
+<h5 class="text-center mt-5">The view of calendar with items on it,unassigned items and search method</h5>
+<div class="float-container pl-20">
+  <div class="search-input">
+        <span>
+        <input class="input-search" type="text" [formControl]="searchCtrl"
+               aria-label="Sizing example input"
+               aria-describedby="inputGroup-sizing-default" placeholder="Search"/>
+        </span>
+  </div>
+  <div class="d-inline-flex unassigned-item ml-2">
+    <ul class="list-style ">
+      <li *ngFor="let item of unassignedItems; let i = index"
+          class="size-item-list cursor-pointer" (click)="assigningItem(item)"
+          [ngClass]="{'selected': selectItem?.id === item.id}">
+        <p class="m-0 p-0">Confirmation No#:</p>
+        <p class="text-muted">{{item.confirmation_no}}</p>
+        {{item.start_date | date}}
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M14 16.94V12.94H5.08L5.05 10.93H14V6.94L19 11.94Z"/>
+        </svg>
+        {{item.end_date | date}}
+        {{this.noAvailableSlots ? 'No available slots for this reservation' : null}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <app-calendar-scheduler
+        [resources]="cars"
+        [resourceFields]="resourceFields"
+        [currentDate]="currentDate"
+        [items]="items"
+        [startOfCalendar]="startOfCalendar"
+        [endOfCalendar]="endOfCalendar"
+        [itemWidth]="cellWidth"
+        [noAvailableSlots]="noAvailableSlots"
+        [showSearchFilter]="true"
+        [filter]="searchCtrl.value"
+        (itemAssigned)="carReservationSelected($event)"
+        (itemDeleted)="carReservationDeleted($event)"
+      >
+        <ng-template #itemContentTemplate let-item let-selectedItem let-row>
+          <div *ngIf="item.temporary" class="check icon"></div>
+          <label
+            class="item-style">{{item?.id == selectedItem?.id && row.resource?.id == selectedItem?.resource_id ? '' : item?.text }}</label>
+          <svg (click)="carReservationDeleted(item)" *ngIf="!item.temporary" class="delete-icon mr-2"
+               viewBox="0 0 24 24">
+            <path fill="currentColor"
+                  d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z"/>
+          </svg>
+          <span class="extra-hours" [ngStyle]="{'width.px':extraCheckOutHours}"></span>
+        </ng-template>
+      </app-calendar-scheduler>
+    </div>
+  </div>
+
+  <p class="mt-2">See code below</p>
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel title="TS FILE">
+      <ng-template ngbPanelContent>
+      <pre>
+       <code [innerHTML]="codeToShow"></code>
+       </pre>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="HTML FILE">
+      <ng-template ngbPanelContent>
+        <textarea disabled rows="20" cols="20" class="w-full" [value]="a">
+        </textarea>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="CSS FILE">
+      <ng-template ngbPanelContent>
+        <textarea disabled rows="20" cols="20" class="w-full">
+.item-style {
+  color: whitesmoke;
+}
+
+.extra-hours {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  background-color: #d64161;
+}
+
+.delete-icon {
+  color: white;
+  width: 24px;
+  height: 20px;
+  float: right;
+  cursor: pointer;
+  z-index: 700;
+}
+
+.header-filter {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.float-container {
+  display: flex;
+}
+
+.flex-container {
+  border-collapse: collapse;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.unassigned-item {
+  flex: 3 0;
+  overflow: auto;
+}
+
+.size-item-list {
+  margin-top: 8px;
+  background-color: powderblue;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: 8px;
+  padding: 0px 5px;
+  text-overflow: ellipsis;
+  min-width: 200px;
+  float: left;
+  font-size: 12px;
+  position: relative;
+  display: block;
+}
+
+
+.form-control:focus {
+  border-color: rgba(104, 239, 219, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(104, 219, 239, 0.6);
+  outline: 0 none;
+}
+
+.search-icon {
+  width: 31px;
+  height: 47px;
+}
+
+.search-input {
+  flex: 1 0;
+}
+
+.input-search {
+  width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-position: 7px 7px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  margin-top: 7px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .50s ease-in-out;
+}
+
+.input-search:focus {
+  width: 70%;
+  border-color: rgba(89, 175, 246, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(104, 239, 235, 0.6);
+  outline: 0 none;
+}
+
+.no-car-exists {
+  background: #c7c5c5;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.list-style {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 7px;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0
+}
+
+.assign-button {
+  width: 60px;
+  height: 27px;
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  margin-left: 3px;
+  border-radius: 5px;
+  box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mt-18 {
+  margin-top: 18px
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.selected {
+  background-color: rgba(102, 241, 21, 0.67)
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+
+
+
+        </textarea>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+
+
+</div>
+
+

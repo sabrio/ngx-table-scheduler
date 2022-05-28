@@ -1,0 +1,123 @@
+.search-input {
+  flex: 1 0;
+}
+
+.input-search {
+  width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  //background-image: url('/assets/img/icons8-search-30.png');
+  background-position: 7px 7px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .50s ease-in-out;
+}
+
+.float-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+input.searchbar-input.searchbar-md {
+  box-shadow: none;
+  border: 1px solid #c5c5c5;
+  --border-radius: 13px !important;
+}
+
+.select-input {
+  height: 45px;
+}
+
+.date-input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.item-input {
+  box-shadow: none;
+  border: 1px solid #c5c5c5 !important;
+  border-radius: 3px;
+}
+
+.mt-2 {
+  margin-top: 2px;
+}
+
+::ng-deep.check.icon {
+  color: #ffffff;
+  position: absolute;
+  margin-left: 3px;
+  margin-top: 4px;
+  width: 14px;
+  height: 8px;
+  border-bottom: solid 2px currentColor;
+  border-left: solid 2px currentColor;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+::ng-deep .daily-item {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+.attribute-grid {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  .attribute-bottom-border {
+    border-bottom: 1px solid #c1c1c1;
+  }
+
+  .row {
+    flex-grow: 1;
+    align-items: center;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .attribute-cell {
+    padding: 2px;
+    font-weight: bold;
+
+    &.attribute-border-right {
+      border-right: 1px solid #c1c1c1;
+    }
+
+    .attribute-number {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    .attribute-label {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+}
+
+.text-availability {
+  font-size: 12px;
+}
+
+item {
+  box-shadow: none;
+  border: 1px solid #c5c5c5 !important;
+  border-radius: 3px;
+}
+
+.mt--2 {
+  margin-top: -2px
+}
+

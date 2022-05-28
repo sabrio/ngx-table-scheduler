@@ -1,0 +1,63 @@
+<div class="table-outer">
+  <div class="table-inner" #table [ngStyle]="{'margin-left.px':resourceWidth}">
+    <table>
+      <tr>
+        <th *ngFor="let field of resourceFields" class="resource-header">{{field}}</th>
+        <th *ngFor="let date of itemHeaders" class="item-header" [style.width.px]="itemWidth"
+            [class.currentDay]="date.currentDate == currentDate.getDate()"
+            [class.weekend]="date.dayOfWeek==0 || date.dayOfWeek==6">
+          {{ date.date   | date : ' MMM  d '}}
+        </th>
+      </tr>
+
+      <tr *ngFor="let row of tableRows">
+        <td *ngFor="let cell of row.items"
+            [class.resource-cell]="cell.type == 'resource'"
+            [class.item-cell]="cell.type == 'item'"
+            [class.weekend]="cell?.header?.dayOfWeek == 0 || cell?.header?.dayOfWeek == 6"
+            [class.currentDay]="cell?.header?.currentDate == currentDate.getDate()"
+            [style.width.px]="cell.type == 'item' && itemWidth "
+            [style.height.px]="cell.type==='item' && itemHeight"
+            [style.height.px]="cell.type === 'resource' && itemHeight">
+          <span *ngIf="!cell.items || cell.items.length == 0">{{cell.text}}</span>
+          <span>
+                          <ng-template #defaultItemTemplateContent let-item>
+                <div *ngIf="item.temporary" class="check icon"></div>
+                            {{item?.id == selectedItem?.id && row.resource?.id == selectedItem?.resource_id ? '' : item?.text }}
+              </ng-template>
+              <ng-template #defaultItemTemplate let-item let-i>
+                <div class="default-item"
+                     (click)="itemClick(item)"
+                     [class.selected-item]="item?.id == selectedItem?.id  && row.resource.id == selectedItem?.resource_id"
+                     [ngStyle]="{ 'left.px': item._left, 'width.px': item._width, 'background-color': item?.color}">
+                    <ng-container
+                      [ngTemplateOutlet]="itemContentTemplateRef || defaultItemTemplateContent"
+                      [ngTemplateOutletContext]="{ $implicit: item, index: i}">
+                   </ng-container>
+                </div>
+              </ng-template>
+              <ng-container
+                *ngFor="let item of cell.items;let i=index"
+                [ngTemplateOutlet]="itemTemplateRef || defaultItemTemplate"
+                [ngTemplateOutletContext]="{ $implicit: item, index: i}">
+             </ng-container>
+         </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col text-right mr-2">
+      {{this.startOfCalendar  | date}}
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M14 16.94V12.94H5.08L5.05 10.93H14V6.94L19 11.94Z"/>
+      </svg>
+      {{this.endOfCalendar  | date }}
+    </div>
+  </div>
+</div>
+
+<div class="no-car-exists" *ngIf="filteredResources.length == 0">
+  {{this.filteredResources.length == 0 ? "No results found with this car resource" : ""}}
+</div>
+
