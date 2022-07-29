@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
 import {CalendarSchedulerComponent} from "../calendar-scheduler.component";
 import * as moment from 'moment';
+import {NgxTableSchedulerComponent} from "NgxTableScheduler";
 
 @Component({
   selector: 'app-car-calendar',
@@ -30,7 +31,7 @@ export class CarCalendarComponent implements OnInit {
   selectItem: any = null;
   resourceFields = ["Category", "Code", "Number"];
   codeToShow: any;
-  @ViewChild(CalendarSchedulerComponent) fleetManagement: CalendarSchedulerComponent | any;
+  @ViewChild(NgxTableSchedulerComponent) fleetManagement: NgxTableSchedulerComponent | any;
 
   _destroyed$ = new Subject<void>();
   destroyed$: Observable<void> = this._destroyed$.asObservable();

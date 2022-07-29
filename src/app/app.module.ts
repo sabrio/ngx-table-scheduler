@@ -11,6 +11,9 @@ import { CarAvailabilityComponent } from './calendar-scheduler/calendar-schedule
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CalendarDisplayComponent } from './calendar-scheduler/calendar-scheduler/car-calendar/calendar-display/calendar-display.component';
 import { DocumentationComponent } from './calendar-scheduler/documentation/documentation.component';
+// import {NgxTableSchedulerModule} from "../../projects/ngx-table-scheduler/src/lib/ngx-table-scheduler.module";
+import {CommonModule} from "@angular/common";
+import {NgxTableSchedulerModule} from "NgxTableScheduler";
 
 @NgModule({
   declarations: [
@@ -23,11 +26,15 @@ import { DocumentationComponent } from './calendar-scheduler/documentation/docum
   ],
   imports: [
     BrowserModule,
+
+    CommonModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxTableSchedulerModule,
+    // NgxTableSchedulerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

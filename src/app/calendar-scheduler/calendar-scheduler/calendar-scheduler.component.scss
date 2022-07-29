@@ -88,7 +88,7 @@ $resource-number: 3;
 
 .reserved-resource {
   width: ($item-width * 2.3) + (2px);
-  left: 100 / 24 * 6%;
+  left: calc(100 / 24 * 6%);
   background-color: blue;
 }
 

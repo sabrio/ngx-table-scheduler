@@ -10,7 +10,6 @@ import {CalendarSchedulerComponent} from "../../calendar-scheduler.component";
   templateUrl: './car-availability.component.html',
   styleUrls: ['./car-availability.component.scss']
 })
-@Injectable()
 
 export class CarAvailabilityComponent implements OnInit {
 

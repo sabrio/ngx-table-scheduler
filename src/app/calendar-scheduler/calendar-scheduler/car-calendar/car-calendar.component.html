@@ -29,7 +29,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 mt-4">
-      <app-calendar-scheduler
+      <ngx-table-scheduler
         [resources]="cars"
         [resourceFields]="resourceFields"
         [currentDate]="currentDate"
@@ -54,7 +54,7 @@
           </svg>
           <span class="extra-hours" [ngStyle]="{'width.px':extraCheckOutHours}"></span>
         </ng-template>
-      </app-calendar-scheduler>
+      </ngx-table-scheduler>
     </div>
   </div>
 

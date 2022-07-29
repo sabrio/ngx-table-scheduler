@@ -6,7 +6,7 @@
         <th *ngFor="let date of itemHeaders" class="item-header" [style.width.px]="itemWidth"
             [class.currentDay]="date.currentDate == currentDate.getDate()"
             [class.weekend]="date.dayOfWeek==0 || date.dayOfWeek==6">
-          {{ date.date   | date : ' MMM  d '}}
+          {{ date.date   | amDateFormat : ' MMM  d '}}
         </th>
       </tr>
 
@@ -17,8 +17,7 @@
             [class.weekend]="cell?.header?.dayOfWeek == 0 || cell?.header?.dayOfWeek == 6"
             [class.currentDay]="cell?.header?.currentDate == currentDate.getDate()"
             [style.width.px]="cell.type == 'item' && itemWidth "
-            [style.height.px]="cell.type==='item' && itemHeight"
-            [style.height.px]="cell.type === 'resource' && itemHeight">
+            [style.height.px]="(cell.type ==='item' || cell.type === 'resource') && itemHeight">
           <span *ngIf="!cell.items || cell.items.length == 0">{{cell.text}}</span>
           <span>
                           <ng-template #defaultItemTemplateContent let-item>
@@ -48,11 +47,11 @@
   </div>
   <div class="row">
     <div class="col text-right mr-2">
-      {{this.startOfCalendar  | date}}
+      {{this.startOfCalendar  | amDateFormat}}
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path fill="currentColor" d="M14 16.94V12.94H5.08L5.05 10.93H14V6.94L19 11.94Z"/>
       </svg>
-      {{this.endOfCalendar  | date }}
+      {{this.endOfCalendar  | amDateFormat }}
     </div>
   </div>
 </div>

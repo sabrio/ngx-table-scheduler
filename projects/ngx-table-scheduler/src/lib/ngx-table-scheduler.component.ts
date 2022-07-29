@@ -10,8 +10,8 @@ import {
   ContentChild,
   TemplateRef
 } from '@angular/core';
-import * as moment from 'moment';
-import 'moment/locale/pt-br';
+import moment from 'moment';
+
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 
@@ -19,6 +19,7 @@ interface Row {
   resource: any;
   items: Cell[] | any;
 }
+
 
 interface Cell {
   type: 'item' | 'resource';
