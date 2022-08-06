@@ -1,0 +1,53 @@
+{
+  "name": "ngx-moment",
+  "version": "6.0.2",
+  "description": "Moment.JS pipes for Angular (timeago and more)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urish/ngx-moment.git"
+  },
+  "keywords": [
+    "angular",
+    "timeago",
+    "momentjs"
+  ],
+  "author": "Uri Shaked",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urish/ngx-moment/issues"
+  },
+  "homepage": "https://github.com/urish/ngx-moment#readme",
+  "peerDependencies": {
+    "moment": "^2.19.3"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "tslint --project tsconfig.lint.json -c tslint.json --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "module": "fesm2015/ngx-moment.mjs",
+  "es2020": "fesm2020/ngx-moment.mjs",
+  "esm2020": "esm2020/ngx-moment.mjs",
+  "fesm2020": "fesm2020/ngx-moment.mjs",
+  "fesm2015": "fesm2015/ngx-moment.mjs",
+  "typings": "ngx-moment.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-moment.d.ts",
+      "esm2020": "./esm2020/ngx-moment.mjs",
+      "es2020": "./fesm2020/ngx-moment.mjs",
+      "es2015": "./fesm2015/ngx-moment.mjs",
+      "node": "./fesm2015/ngx-moment.mjs",
+      "default": "./fesm2020/ngx-moment.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

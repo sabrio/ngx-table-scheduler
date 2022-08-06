@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild, Injectable} from '@angular/core';
 import * as moment from 'moment';
 import 'moment/locale/pt-br';
 import {FormControl} from "@angular/forms";
-import {CalendarSchedulerComponent} from "../../calendar-scheduler.component";
+import {NgxTableSchedulerComponent} from 'ngx-table-scheduler'
 
 
 @Component({
@@ -14,7 +14,7 @@ import {CalendarSchedulerComponent} from "../../calendar-scheduler.component";
 
 export class CarAvailabilityComponent implements OnInit {
 
-  @ViewChild(CalendarSchedulerComponent) fleetManagement: CalendarSchedulerComponent | any;
+  @ViewChild(NgxTableSchedulerComponent) fleetManagement: NgxTableSchedulerComponent | any;
 
   items: any[] = [];
   cars: any[] = []

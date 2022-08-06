@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 mt-4">
-      <app-calendar-scheduler
+      <ngx-table-scheduler
         [resources]="cars"
         [resourceFields]="resourceFields"
         [currentDate]="currentDate"
@@ -13,7 +13,7 @@
         [showSearchFilter]="true"
         [filter]="searchCtrl.value"
       >
-      </app-calendar-scheduler>
+      </ngx-table-scheduler>
     </div>
   </div>
   <p class="mt-2">See code below</p>

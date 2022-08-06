@@ -1,0 +1,7 @@
+import { PipeTransform } from '@angular/core';
+import * as i0 from "@angular/core";
+export declare class FromUnixPipe implements PipeTransform {
+    transform(value: number | string, ...args: string[]): any;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FromUnixPipe, never>;
+    static ɵpipe: i0.ɵɵPipeDeclaration<FromUnixPipe, "amFromUnix">;
+}

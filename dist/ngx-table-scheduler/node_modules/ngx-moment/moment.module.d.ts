@@ -1,0 +1,25 @@
+import { ModuleWithProviders } from '@angular/core';
+import { NgxMomentOptions } from './moment-options';
+import * as i0 from "@angular/core";
+import * as i1 from "./add.pipe";
+import * as i2 from "./calendar.pipe";
+import * as i3 from "./date-format.pipe";
+import * as i4 from "./difference.pipe";
+import * as i5 from "./duration.pipe";
+import * as i6 from "./from-unix.pipe";
+import * as i7 from "./parse.pipe";
+import * as i8 from "./subtract.pipe";
+import * as i9 from "./time-ago.pipe";
+import * as i10 from "./utc.pipe";
+import * as i11 from "./from-utc.pipe";
+import * as i12 from "./local.pipe";
+import * as i13 from "./locale.pipe";
+import * as i14 from "./parse-zone.pipe";
+import * as i15 from "./is-before.pipe";
+import * as i16 from "./is-after.pipe";
+export declare class MomentModule {
+    static forRoot(options?: NgxMomentOptions): ModuleWithProviders<MomentModule>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MomentModule, never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<MomentModule, [typeof i1.AddPipe, typeof i2.CalendarPipe, typeof i3.DateFormatPipe, typeof i4.DifferencePipe, typeof i5.DurationPipe, typeof i6.FromUnixPipe, typeof i7.ParsePipe, typeof i8.SubtractPipe, typeof i9.TimeAgoPipe, typeof i10.UtcPipe, typeof i11.FromUtcPipe, typeof i12.LocalTimePipe, typeof i13.LocalePipe, typeof i14.ParseZonePipe, typeof i15.IsBeforePipe, typeof i16.IsAfterPipe], never, [typeof i1.AddPipe, typeof i2.CalendarPipe, typeof i3.DateFormatPipe, typeof i4.DifferencePipe, typeof i5.DurationPipe, typeof i6.FromUnixPipe, typeof i7.ParsePipe, typeof i8.SubtractPipe, typeof i9.TimeAgoPipe, typeof i10.UtcPipe, typeof i11.FromUtcPipe, typeof i12.LocalTimePipe, typeof i13.LocalePipe, typeof i14.ParseZonePipe, typeof i15.IsBeforePipe, typeof i16.IsAfterPipe]>;
+    static ɵinj: i0.ɵɵInjectorDeclaration<MomentModule>;
+}

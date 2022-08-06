@@ -1,0 +1,93 @@
+import { NgModule } from '@angular/core';
+import { NGX_MOMENT_OPTIONS } from './moment-options';
+import { AddPipe } from './add.pipe';
+import { CalendarPipe } from './calendar.pipe';
+import { DateFormatPipe } from './date-format.pipe';
+import { DifferencePipe } from './difference.pipe';
+import { DurationPipe } from './duration.pipe';
+import { FromUnixPipe } from './from-unix.pipe';
+import { FromUtcPipe } from './from-utc.pipe';
+import { IsAfterPipe } from './is-after.pipe';
+import { IsBeforePipe } from './is-before.pipe';
+import { LocalTimePipe } from './local.pipe';
+import { LocalePipe } from './locale.pipe';
+import { ParsePipe } from './parse.pipe';
+import { ParseZonePipe } from './parse-zone.pipe';
+import { SubtractPipe } from './subtract.pipe';
+import { TimeAgoPipe } from './time-ago.pipe';
+import { UtcPipe } from './utc.pipe';
+import * as i0 from "@angular/core";
+const ANGULAR_MOMENT_PIPES = [
+    AddPipe,
+    CalendarPipe,
+    DateFormatPipe,
+    DifferencePipe,
+    DurationPipe,
+    FromUnixPipe,
+    ParsePipe,
+    SubtractPipe,
+    TimeAgoPipe,
+    UtcPipe,
+    FromUtcPipe,
+    LocalTimePipe,
+    LocalePipe,
+    ParseZonePipe,
+    IsBeforePipe,
+    IsAfterPipe,
+];
+export class MomentModule {
+    static forRoot(options) {
+        return {
+            ngModule: MomentModule,
+            providers: [
+                {
+                    provide: NGX_MOMENT_OPTIONS,
+                    useValue: {
+                        ...options,
+                    },
+                },
+            ],
+        };
+    }
+}
+MomentModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.0", ngImport: i0, type: MomentModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+MomentModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.1.0", ngImport: i0, type: MomentModule, declarations: [AddPipe,
+        CalendarPipe,
+        DateFormatPipe,
+        DifferencePipe,
+        DurationPipe,
+        FromUnixPipe,
+        ParsePipe,
+        SubtractPipe,
+        TimeAgoPipe,
+        UtcPipe,
+        FromUtcPipe,
+        LocalTimePipe,
+        LocalePipe,
+        ParseZonePipe,
+        IsBeforePipe,
+        IsAfterPipe], exports: [AddPipe,
+        CalendarPipe,
+        DateFormatPipe,
+        DifferencePipe,
+        DurationPipe,
+        FromUnixPipe,
+        ParsePipe,
+        SubtractPipe,
+        TimeAgoPipe,
+        UtcPipe,
+        FromUtcPipe,
+        LocalTimePipe,
+        LocalePipe,
+        ParseZonePipe,
+        IsBeforePipe,
+        IsAfterPipe] });
+MomentModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.1.0", ngImport: i0, type: MomentModule });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.0", ngImport: i0, type: MomentModule, decorators: [{
+            type: NgModule,
+            args: [{
+                    declarations: ANGULAR_MOMENT_PIPES,
+                    exports: ANGULAR_MOMENT_PIPES,
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW9tZW50Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9tb21lbnQubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBdUIsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQzlELE9BQU8sRUFBRSxrQkFBa0IsRUFBb0IsTUFBTSxrQkFBa0IsQ0FBQztBQUV4RSxPQUFPLEVBQUUsT0FBTyxFQUFFLE1BQU0sWUFBWSxDQUFDO0FBQ3JDLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUMvQyxPQUFPLEVBQUUsY0FBYyxFQUFFLE1BQU0sb0JBQW9CLENBQUM7QUFDcEQsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLG1CQUFtQixDQUFDO0FBQ25ELE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUMvQyxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0sa0JBQWtCLENBQUM7QUFDaEQsT0FBTyxFQUFFLFdBQVcsRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQzlDLE9BQU8sRUFBRSxXQUFXLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUM5QyxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0sa0JBQWtCLENBQUM7QUFDaEQsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLGNBQWMsQ0FBQztBQUM3QyxPQUFPLEVBQUUsVUFBVSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQzNDLE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxjQUFjLENBQUM7QUFDekMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLG1CQUFtQixDQUFDO0FBQ2xELE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUMvQyxPQUFPLEVBQUUsV0FBVyxFQUFFLE1BQU0saUJBQWlCLENBQUM7QUFDOUMsT0FBTyxFQUFFLE9BQU8sRUFBRSxNQUFNLFlBQVksQ0FBQzs7QUFFckMsTUFBTSxvQkFBb0IsR0FBRztJQUMzQixPQUFPO0lBQ1AsWUFBWTtJQUNaLGNBQWM7SUFDZCxjQUFjO0lBQ2QsWUFBWTtJQUNaLFlBQVk7SUFDWixTQUFTO0lBQ1QsWUFBWTtJQUNaLFdBQVc7SUFDWCxPQUFPO0lBQ1AsV0FBVztJQUNYLGFBQWE7SUFDYixVQUFVO0lBQ1YsYUFBYTtJQUNiLFlBQVk7SUFDWixXQUFXO0NBQ1osQ0FBQztBQU1GLE1BQU0sT0FBTyxZQUFZO0lBQ3ZCLE1BQU0sQ0FBQyxPQUFPLENBQUMsT0FBMEI7UUFDdkMsT0FBTztZQUNMLFFBQVEsRUFBRSxZQUFZO1lBQ3RCLFNBQVMsRUFBRTtnQkFDVDtvQkFDRSxPQUFPLEVBQUUsa0JBQWtCO29CQUMzQixRQUFRLEVBQUU7d0JBQ1IsR0FBRyxPQUFPO3FCQUNYO2lCQUNGO2FBQ0Y7U0FDRixDQUFDO0lBQ0osQ0FBQzs7eUdBYlUsWUFBWTswR0FBWixZQUFZLGlCQXRCdkIsT0FBTztRQUNQLFlBQVk7UUFDWixjQUFjO1FBQ2QsY0FBYztRQUNkLFlBQVk7UUFDWixZQUFZO1FBQ1osU0FBUztRQUNULFlBQVk7UUFDWixXQUFXO1FBQ1gsT0FBTztRQUNQLFdBQVc7UUFDWCxhQUFhO1FBQ2IsVUFBVTtRQUNWLGFBQWE7UUFDYixZQUFZO1FBQ1osV0FBVyxhQWZYLE9BQU87UUFDUCxZQUFZO1FBQ1osY0FBYztRQUNkLGNBQWM7UUFDZCxZQUFZO1FBQ1osWUFBWTtRQUNaLFNBQVM7UUFDVCxZQUFZO1FBQ1osV0FBVztRQUNYLE9BQU87UUFDUCxXQUFXO1FBQ1gsYUFBYTtRQUNiLFVBQVU7UUFDVixhQUFhO1FBQ2IsWUFBWTtRQUNaLFdBQVc7MEdBT0EsWUFBWTsyRkFBWixZQUFZO2tCQUp4QixRQUFRO21CQUFDO29CQUNSLFlBQVksRUFBRSxvQkFBb0I7b0JBQ2xDLE9BQU8sRUFBRSxvQkFBb0I7aUJBQzlCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTW9kdWxlV2l0aFByb3ZpZGVycywgTmdNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IE5HWF9NT01FTlRfT1BUSU9OUywgTmd4TW9tZW50T3B0aW9ucyB9IGZyb20gJy4vbW9tZW50LW9wdGlvbnMnO1xuXG5pbXBvcnQgeyBBZGRQaXBlIH0gZnJvbSAnLi9hZGQucGlwZSc7XG5pbXBvcnQgeyBDYWxlbmRhclBpcGUgfSBmcm9tICcuL2NhbGVuZGFyLnBpcGUnO1xuaW1wb3J0IHsgRGF0ZUZvcm1hdFBpcGUgfSBmcm9tICcuL2RhdGUtZm9ybWF0LnBpcGUnO1xuaW1wb3J0IHsgRGlmZmVyZW5jZVBpcGUgfSBmcm9tICcuL2RpZmZlcmVuY2UucGlwZSc7XG5pbXBvcnQgeyBEdXJhdGlvblBpcGUgfSBmcm9tICcuL2R1cmF0aW9uLnBpcGUnO1xuaW1wb3J0IHsgRnJvbVVuaXhQaXBlIH0gZnJvbSAnLi9mcm9tLXVuaXgucGlwZSc7XG5pbXBvcnQgeyBGcm9tVXRjUGlwZSB9IGZyb20gJy4vZnJvbS11dGMucGlwZSc7XG5pbXBvcnQgeyBJc0FmdGVyUGlwZSB9IGZyb20gJy4vaXMtYWZ0ZXIucGlwZSc7XG5pbXBvcnQgeyBJc0JlZm9yZVBpcGUgfSBmcm9tICcuL2lzLWJlZm9yZS5waXBlJztcbmltcG9ydCB7IExvY2FsVGltZVBpcGUgfSBmcm9tICcuL2xvY2FsLnBpcGUnO1xuaW1wb3J0IHsgTG9jYWxlUGlwZSB9IGZyb20gJy4vbG9jYWxlLnBpcGUnO1xuaW1wb3J0IHsgUGFyc2VQaXBlIH0gZnJvbSAnLi9wYXJzZS5waXBlJztcbmltcG9ydCB7IFBhcnNlWm9uZVBpcGUgfSBmcm9tICcuL3BhcnNlLXpvbmUucGlwZSc7XG5pbXBvcnQgeyBTdWJ0cmFjdFBpcGUgfSBmcm9tICcuL3N1YnRyYWN0LnBpcGUnO1xuaW1wb3J0IHsgVGltZUFnb1BpcGUgfSBmcm9tICcuL3RpbWUtYWdvLnBpcGUnO1xuaW1wb3J0IHsgVXRjUGlwZSB9IGZyb20gJy4vdXRjLnBpcGUnO1xuXG5jb25zdCBBTkdVTEFSX01PTUVOVF9QSVBFUyA9IFtcbiAgQWRkUGlwZSxcbiAgQ2FsZW5kYXJQaXBlLFxuICBEYXRlRm9ybWF0UGlwZSxcbiAgRGlmZmVyZW5jZVBpcGUsXG4gIER1cmF0aW9uUGlwZSxcbiAgRnJvbVVuaXhQaXBlLFxuICBQYXJzZVBpcGUsXG4gIFN1YnRyYWN0UGlwZSxcbiAgVGltZUFnb1BpcGUsXG4gIFV0Y1BpcGUsXG4gIEZyb21VdGNQaXBlLFxuICBMb2NhbFRpbWVQaXBlLFxuICBMb2NhbGVQaXBlLFxuICBQYXJzZVpvbmVQaXBlLFxuICBJc0JlZm9yZVBpcGUsXG4gIElzQWZ0ZXJQaXBlLFxuXTtcblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBBTkdVTEFSX01PTUVOVF9QSVBFUyxcbiAgZXhwb3J0czogQU5HVUxBUl9NT01FTlRfUElQRVMsXG59KVxuZXhwb3J0IGNsYXNzIE1vbWVudE1vZHVsZSB7XG4gIHN0YXRpYyBmb3JSb290KG9wdGlvbnM/OiBOZ3hNb21lbnRPcHRpb25zKTogTW9kdWxlV2l0aFByb3ZpZGVyczxNb21lbnRNb2R1bGU+IHtcbiAgICByZXR1cm4ge1xuICAgICAgbmdNb2R1bGU6IE1vbWVudE1vZHVsZSxcbiAgICAgIHByb3ZpZGVyczogW1xuICAgICAgICB7XG4gICAgICAgICAgcHJvdmlkZTogTkdYX01PTUVOVF9PUFRJT05TLFxuICAgICAgICAgIHVzZVZhbHVlOiB7XG4gICAgICAgICAgICAuLi5vcHRpb25zLFxuICAgICAgICAgIH0sXG4gICAgICAgIH0sXG4gICAgICBdLFxuICAgIH07XG4gIH1cbn1cbiJdfQ==

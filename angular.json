@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "car-calendar-scheduler": {
+    "ngx-table-scheduler-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,14 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/car-calendar-scheduler",
+            "outputPath": "dist/ngx-table-scheduler-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
             ],
             "styles": [
               "src/styles.css",
@@ -37,8 +35,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -69,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "car-calendar-scheduler:build:production"
+              "browserTarget": "ngx-table-scheduler-demo:build:production"
             },
             "development": {
-              "browserTarget": "car-calendar-scheduler:build:development"
+              "browserTarget": "ngx-table-scheduler-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "car-calendar-scheduler:build"
+            "browserTarget": "ngx-calendar-scheduler:build"
           }
         },
         "test": {
@@ -91,8 +89,6 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -101,7 +97,38 @@
           }
         }
       }
+    },
+    "ngx-table-scheduler": {
+      "projectType": "library",
+      "root": "projects/ngx-calendar-scheduler",
+      "sourceRoot": "projects/ngx-calendar-scheduler/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-calendar-scheduler/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-calendar-scheduler/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-calendar-scheduler/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-calendar-scheduler/src/test.ts",
+            "tsConfig": "projects/ngx-calendar-scheduler/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-calendar-scheduler/karma.conf.js"
+          }
+        }
+      }
     }
   },
-  "defaultProject": "car-calendar-scheduler"
+  "defaultProject": "ngx-table-scheduler-demo"
 }

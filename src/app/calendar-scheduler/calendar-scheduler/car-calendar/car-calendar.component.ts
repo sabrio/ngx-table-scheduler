@@ -3,9 +3,8 @@ import {FormControl} from "@angular/forms";
 import 'moment/locale/pt-br';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
-import {CalendarSchedulerComponent} from "../calendar-scheduler.component";
 import * as moment from 'moment';
-
+import {NgxTableSchedulerComponent} from 'ngx-table-scheduler'
 @Component({
   selector: 'app-car-calendar',
   templateUrl: './car-calendar.component.html',
@@ -30,7 +29,8 @@ export class CarCalendarComponent implements OnInit {
   selectItem: any = null;
   resourceFields = ["Category", "Code", "Number"];
   codeToShow: any;
-  @ViewChild(CalendarSchedulerComponent) fleetManagement: CalendarSchedulerComponent | any;
+
+  @ViewChild(NgxTableSchedulerComponent) fleetManagement: NgxTableSchedulerComponent | any;
 
   _destroyed$ = new Subject<void>();
   destroyed$: Observable<void> = this._destroyed$.asObservable();
@@ -174,7 +174,7 @@ export class CarCalendarComponent implements OnInit {
 
   carReservationDeleted(event: any) {
     this.items.find(x => event.id === x.id).resource_id = null;
-    this.fleetManagement.generateTable();
+    this.fleetManagement?.generateTable();
     this.unassignedItems.push(event);
   }
 
@@ -187,7 +187,9 @@ export class CarCalendarComponent implements OnInit {
     }
     this.fleetManagement.prepareAssignItem(item)
   }
-a:any;
+
+  a: any;
+
   showCodeContent() {
     this.codeToShow = `import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import {FormControl} from "@angular/forms";
@@ -379,7 +381,7 @@ export class CarCalendarComponent implements OnInit {
 
 }
 `
-    this.a=`<div class="float-container pl-20">
+    this.a = `<div class="float-container pl-20">
   <div class="search-input">
         <span>
         <input class="input-search" type="text" [formControl]="searchCtrl"
