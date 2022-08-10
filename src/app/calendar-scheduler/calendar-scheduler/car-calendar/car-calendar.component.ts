@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import 'moment/locale/pt-br';
 import {ActivatedRoute, Router} from '@angular/router';

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { NgxTableSchedulerComponent } from './ngx-table-scheduler.component';
-import {MomentModule} from "ngx-moment";
 import {CommonModule} from "@angular/common";
 
 
@@ -10,7 +9,6 @@ import {CommonModule} from "@angular/common";
     NgxTableSchedulerComponent
   ],
   imports: [
-    MomentModule,
     CommonModule,
   ],
   exports: [
