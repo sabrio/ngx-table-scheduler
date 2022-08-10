@@ -3,5 +3,10 @@
   "dest": "../../dist/ngx-table-scheduler",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "moment",
+    "tslib",
+    "ngx-moment"
+  ]
 }

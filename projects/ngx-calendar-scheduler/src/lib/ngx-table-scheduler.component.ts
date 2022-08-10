@@ -87,6 +87,9 @@ export class NgxTableSchedulerComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(moment().toISOString());
+
+
     let shouldGenerate = false;
     if (changes['startOfCalendar'] && !(this.startOfCalendar instanceof moment)) {
       this.startOfCalendar = moment(this.startOfCalendar);

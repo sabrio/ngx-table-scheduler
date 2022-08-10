@@ -14,7 +14,7 @@ import {
   CalendarDisplayComponent
 } from './calendar-scheduler/calendar-scheduler/car-calendar/calendar-display/calendar-display.component';
 import {DocumentationComponent} from './calendar-scheduler/documentation/documentation.component';
-import {NgxTableSchedulerModule} from "../../projects/ngx-calendar-scheduler/src/lib/ngx-table-scheduler.module";
+import {NgxTableSchedulerModule} from "ngx-table-scheduler";
 import {MomentModule} from 'ngx-moment';
 
 @NgModule({
