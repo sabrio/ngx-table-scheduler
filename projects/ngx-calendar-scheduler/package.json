@@ -1,15 +1,36 @@
 {
   "name": "ngx-table-scheduler",
-  "version": "0.0.1",
+  "version": "0.0.4",
+  "description": "Angular Table Scheduler Library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabrio/ngx-table-scheduler.git"
+  },
+  "keywords": [
+    "angular",
+    "table scheduler",
+    "module",
+    "library"
+  ],
+  "author": "Sabrio",
+  "contributors": [
+    "Sabrio",
+    "erlinddd",
+    "kasoveton"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sabrio/ngx-table-scheduler/issues"
+  },
+  "homepage": "https://github.com/sabrio/ngx-table-scheduler",
+  "sideEffects": false,
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0",
-    "moment": "^2.29.4",
-    "ngx-moment": "^6.0.2"
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0",
+    "moment": "^2.29.4"
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "moment": "^2.29.4",
-    "ngx-moment": "^6.0.2"
+    "moment": "^2.29.4"
   }
 }

@@ -7,9 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "publish": "ng build ngx-table-scheduler --prod && cd dist/ngx-table-scheduler && npm publish && cd ../..",
+    "docs": "ng build --output-path docs --base-href /your_project_name/"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
