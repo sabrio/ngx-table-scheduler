@@ -87,7 +87,7 @@ import 'moment/locale/pt-br';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
 import * as moment from 'moment';
-import {CalendarSchedulerComponent} from "../../calendar-scheduler.component";
+import {NgxTableScheduler} from "ngx-table-scheduler"
 
 
 @Component({
@@ -113,7 +113,7 @@ export class CalendarDisplayComponent implements OnInit {
   selectItem: any = null;
   resourceFields = ["Category", "Code", "Number"];
 
-  @ViewChild(CalendarSchedulerComponent) fleetManagement: CalendarSchedulerComponent | any;
+  @ViewChild(NgxTableScheduler) fleetManagement: NgxTableScheduler | any;
 
   _destroyed$ = new Subject<void>();
   destroyed$: Observable<void> = this._destroyed$.asObservable();

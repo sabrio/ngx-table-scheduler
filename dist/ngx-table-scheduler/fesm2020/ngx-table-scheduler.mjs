@@ -1,6 +1,6 @@
 import * as i0 from '@angular/core';
 import { Injectable, EventEmitter, ElementRef, Component, Input, ViewChild, ContentChild, Output, NgModule } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import * as i1 from '@angular/common';

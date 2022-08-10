@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
 import * as moment from 'moment';
 import {NgxTableSchedulerComponent} from 'ngx-table-scheduler'
+
 @Component({
   selector: 'app-car-calendar',
   templateUrl: './car-calendar.component.html',
@@ -196,7 +197,7 @@ import {FormControl} from "@angular/forms";
 import 'moment/locale/pt-br';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
-import {CalendarSchedulerComponent} from "../calendar-scheduler.component";
+import {NgxTableScheduler} from "ngx-table-scheduler"
 import * as moment from 'moment';
 
 @Component({
@@ -222,7 +223,7 @@ export class CarCalendarComponent implements OnInit {
   selectItem: any = null;
   resourceFields = ["Category", "Code", "Number"];
 
-  @ViewChild(CalendarSchedulerComponent) fleetManagement: CalendarSchedulerComponent | any;
+   @ViewChild(NgxTableSchedulerComponent) fleetManagement: NgxTableSchedulerComponent | any;
 
   _destroyed$ = new Subject<void>();
   destroyed$: Observable<void> = this._destroyed$.asObservable();
