@@ -30,6 +30,7 @@ export class CarCalendarComponent implements OnInit {
   selectItem: any = null;
   resourceFields = ["Category", "Code", "Number"];
   codeToShow: any;
+  code: any;
 
   @ViewChild(NgxTableSchedulerComponent) fleetManagement: NgxTableSchedulerComponent | any;
 
@@ -189,7 +190,6 @@ export class CarCalendarComponent implements OnInit {
     this.fleetManagement.prepareAssignItem(item)
   }
 
-  a: any;
 
   showCodeContent() {
     this.codeToShow = `import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
@@ -382,7 +382,7 @@ export class CarCalendarComponent implements OnInit {
 
 }
 `
-    this.a = `<div class="float-container pl-20">
+    this.code = `<div class="float-container pl-20">
   <div class="search-input">
         <span>
         <input class="input-search" type="text" [formControl]="searchCtrl"
